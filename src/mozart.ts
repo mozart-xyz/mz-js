@@ -79,7 +79,7 @@ export class MozartManager {
     public async StartLoginStatusMonitor(maxRetryCount: number = 30, timeBetweenRetriesInSeconds = 2, callback: Function = null) {
         let retryCount = 0;
         let oauthURL: string = MozartManager.AUTH_URL_BASE + "/login_status?oauthState=" + this.authState;
-        let checkStatusInterval: number = setInterval(() => {
+        let checkStatusInterval: any = setInterval(() => {
             WebRequest.get(oauthURL).then((result: any) => {
                 retryCount++;
                 

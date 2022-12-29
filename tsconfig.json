@@ -1,13 +1,16 @@
 // tsconfig.json
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "ES2015",
         "esModuleInterop": false,
-        "target": "es6",
+        "target": "ES2015",
+	"lib":["es2015","dom"],
+	"declaration":true,
+	"declarationDir":"./dist/typings/",
         "noImplicitAny": true,
         "moduleResolution": "node",
         "sourceMap": true,
-        "outDir": "dist",
+        "outDir": "./dist/esm",
         "baseUrl": ".",
         "paths": {
             "*": [
@@ -16,6 +19,7 @@
             ]
         }
     },
+    "files":["./src/index.ts"],
     "include": [
         "src/**/*"
 , "test"    ]
