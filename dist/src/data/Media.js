@@ -1,4 +1,7 @@
-export class Media {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Media = void 0;
+class Media {
     constructor() {
         /*[string] The display name you would like to set for the file.*/
         this.fileName = '';
@@ -8,4 +11,5 @@ export class Media {
         this.data = '';
     }
 }
+exports.Media = Media;
 //# sourceMappingURL=Media.js.map

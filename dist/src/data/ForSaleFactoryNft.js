@@ -1,4 +1,7 @@
-export class ForSaleFactoryNft {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ForSaleFactoryNft = void 0;
+class ForSaleFactoryNft {
     constructor() {
         /*[string] NO DESCRIPTION, PLEASE ADD TO API.YAML*/
         this.factoryListingId = '';
@@ -14,4 +17,5 @@ export class ForSaleFactoryNft {
         this.price = '';
     }
 }
+exports.ForSaleFactoryNft = ForSaleFactoryNft;
 //# sourceMappingURL=ForSaleFactoryNft.js.map

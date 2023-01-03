@@ -1,4 +1,7 @@
-export class V1FtsBalances {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1FtsBalances = void 0;
+class V1FtsBalances {
     constructor() {
         /*[string] The id of the Balance.*/
         this.id = '';
@@ -10,4 +13,5 @@ export class V1FtsBalances {
         this.balance = '';
     }
 }
+exports.V1FtsBalances = V1FtsBalances;
 //# sourceMappingURL=V1FtsBalances.js.map

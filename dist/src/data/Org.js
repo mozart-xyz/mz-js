@@ -1,4 +1,7 @@
-export class Org {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Org = void 0;
+class Org {
     constructor() {
         /*[string] NO DESCRIPTION, PLEASE ADD TO API.YAML*/
         this.id = '';
@@ -10,4 +13,5 @@ export class Org {
         this.sysuserId = '';
     }
 }
+exports.Org = Org;
 //# sourceMappingURL=Org.js.map

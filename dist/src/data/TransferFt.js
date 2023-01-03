@@ -1,4 +1,7 @@
-export class TransferFt {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TransferFt = void 0;
+class TransferFt {
     constructor() {
         /*[string] The id of the previous owner of the FT*/
         this.prevOwnerId = '';
@@ -14,4 +17,5 @@ export class TransferFt {
         this.newOwnerBalance = '';
     }
 }
+exports.TransferFt = TransferFt;
 //# sourceMappingURL=TransferFt.js.map

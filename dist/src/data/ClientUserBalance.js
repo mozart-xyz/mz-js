@@ -1,4 +1,7 @@
-export class ClientUserBalance {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ClientUserBalance = void 0;
+class ClientUserBalance {
     constructor() {
         /*[string] NO DESCRIPTION, PLEASE ADD TO API.YAML*/
         this.ftId = '';
@@ -8,4 +11,5 @@ export class ClientUserBalance {
         this.balance = '';
     }
 }
+exports.ClientUserBalance = ClientUserBalance;
 //# sourceMappingURL=ClientUserBalance.js.map

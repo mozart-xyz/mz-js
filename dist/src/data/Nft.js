@@ -1,4 +1,7 @@
-export class Nft {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Nft = void 0;
+class Nft {
     constructor() {
         /*[string] The id of the Nft.*/
         this.id = '';
@@ -26,4 +29,5 @@ export class Nft {
         this.metadata = {};
     }
 }
+exports.Nft = Nft;
 //# sourceMappingURL=Nft.js.map

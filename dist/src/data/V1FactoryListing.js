@@ -1,4 +1,7 @@
-export class V1FactoryListing {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1FactoryListing = void 0;
+class V1FactoryListing {
     constructor() {
         /*[string] NO DESCRIPTION, PLEASE ADD TO API.YAML*/
         this.id = '';
@@ -10,4 +13,5 @@ export class V1FactoryListing {
         this.ftAmount = '';
     }
 }
+exports.V1FactoryListing = V1FactoryListing;
 //# sourceMappingURL=V1FactoryListing.js.map

@@ -1,4 +1,7 @@
-export class V1Fts {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Fts = void 0;
+class V1Fts {
     constructor() {
         /*[string] The id of the FT.*/
         this.id = '';
@@ -22,4 +25,5 @@ export class V1Fts {
         this.supply = '';
     }
 }
+exports.V1Fts = V1Fts;
 //# sourceMappingURL=V1Fts.js.map

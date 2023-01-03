@@ -7,8 +7,9 @@
     "types": "./dist/typings/index.d.ts",
     "scripts": {
         "test": "mocha dist/test",
-        "build": "webpack",
+        "build-web": "webpack",
         "prebuild": "tsc",
+	"build-node": "tsc -p tsconfig.node.json",
         "dev": "webpack serve --mode development"
     },
     "keywords": [],

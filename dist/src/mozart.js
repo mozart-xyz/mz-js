@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -7,25 +8,27 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { WebRequest } from "./webrequest";
-import { NFTItem } from "./data/NFTItem";
-import { User } from "./data/User";
-import { V1FtsBalances } from "./data/V1FtsBalances";
-export class MozartManager {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MozartManager = void 0;
+const webrequest_1 = require("./webrequest");
+const NFTItem_1 = require("./data/NFTItem");
+const User_1 = require("./data/User");
+const V1FtsBalances_1 = require("./data/V1FtsBalances");
+class MozartManager {
     constructor(gameId, currencyId) {
         //***************************************** */
         this.gameId = "";
         this.currencyId = "";
         //***************************************** */
         this.isLoggedIn = false;
-        this.userData = new User();
+        this.userData = new User_1.User();
         this.authState = "";
         this.jwtToken = "";
         /**This is a list of items loaded from the store for this app*/
         this.storeItems = new Array();
         /** This is a list of items the user actually has in their inventory for this app  */
         this.inventoryItems = new Array();
-        this.balances = new V1FtsBalances();
+        this.balances = new V1FtsBalances_1.V1FtsBalances();
         //Events that fire when certain things happen - your sdk can listen to these events, just push a function into one of these arrays
         /** Fires when user logs in */
         this.onLoggedIn = new Array();
@@ -53,7 +56,7 @@ export class MozartManager {
         */
     LoginOAuthAndGetLoginURL(authMethod = "google") {
         return __awaiter(this, void 0, void 0, function* () {
-            let result = yield WebRequest.get(MozartManager.AUTH_URL_BASE + "/login?gameId=" + this.gameId);
+            let result = yield webrequest_1.WebRequest.get(MozartManager.AUTH_URL_BASE + "/login?gameId=" + this.gameId);
             this.authState = result.oauthState;
             if (authMethod == "google")
                 return result.googleUrl;
@@ -73,12 +76,12 @@ export class MozartManager {
             let retryCount = 0;
             let oauthURL = MozartManager.AUTH_URL_BASE + "/login_status?oauthState=" + this.authState;
             let checkStatusInterval = setInterval(() => {
-                WebRequest.get(oauthURL).then((result) => {
+                webrequest_1.WebRequest.get(oauthURL).then((result) => {
                     retryCount++;
                     if (result.status && result.status.toLowerCase() === "ok") {
                         this.isLoggedIn = true;
                         this.jwtToken = result.jwtToken;
-                        WebRequest.jwt = result.jwtToken;
+                        webrequest_1.WebRequest.jwt = result.jwtToken;
                         clearInterval(checkStatusInterval);
                         if (callback)
                             callback(true);
@@ -103,7 +106,7 @@ export class MozartManager {
      */
     RequestUserData() {
         return __awaiter(this, void 0, void 0, function* () {
-            let result = yield WebRequest.get_autheticated(MozartManager.API_URL_BASE + "/v1/client/me?gameId=" + this.gameId);
+            let result = yield webrequest_1.WebRequest.get_autheticated(MozartManager.API_URL_BASE + "/v1/client/me?gameId=" + this.gameId);
             this.userData = result.user;
             let nfts = result.nfts;
             this.balances = result.balances;
@@ -111,7 +114,7 @@ export class MozartManager {
             this.storeItems.length = 0;
             for (let idx in nfts) {
                 let nft = nfts[idx];
-                let newItem = new NFTItem();
+                let newItem = new NFTItem_1.NFTItem();
                 newItem.name = nft.name;
                 newItem.image = nft.imageUrl;
                 newItem.description = nft.description;
@@ -129,7 +132,7 @@ export class MozartManager {
     BuyItem(ItemTemplateID) {
         return __awaiter(this, void 0, void 0, function* () {
             let postData = { "factoryListingId": ItemTemplateID };
-            let buyResponse = yield WebRequest.post(MozartManager.API_URL_BASE + "/v1/client/factory_items/buy", postData);
+            let buyResponse = yield webrequest_1.WebRequest.post(MozartManager.API_URL_BASE + "/v1/client/factory_items/buy", postData);
             this.FireEvent(this.onPurchaseComplete, null);
             return buyResponse;
         });
@@ -141,11 +144,11 @@ export class MozartManager {
     LoadStore() {
         return __awaiter(this, void 0, void 0, function* () {
             // /v1/client/factory_items/for_sale
-            let result = yield WebRequest.get_autheticated(MozartManager.API_URL_BASE + "/v1/client/factory_items/for_sale?gameId=" + this.gameId);
+            let result = yield webrequest_1.WebRequest.get_autheticated(MozartManager.API_URL_BASE + "/v1/client/factory_items/for_sale?gameId=" + this.gameId);
             this.storeItems.length = 0;
             for (let idx in result) {
                 let nft = result[idx];
-                let newItem = new NFTItem();
+                let newItem = new NFTItem_1.NFTItem();
                 newItem.name = nft.name;
                 newItem.image = nft.imageUrl;
                 newItem.description = nft.description;
@@ -171,6 +174,7 @@ export class MozartManager {
         return MozartManager.APP_URL_BASE + "/checkout?gameId=" + this.gameId + "&ftId=" + this.currencyId + "&jwt=" + this.jwtToken;
     }
 }
+exports.MozartManager = MozartManager;
 MozartManager.instance = null;
 /**URL for the auth service */
 MozartManager.AUTH_URL_BASE = "https://testnet-api.mozart.xyz/v1/auth";
