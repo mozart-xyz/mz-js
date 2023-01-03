@@ -1,5 +1,5 @@
 # mz-js
-Cross platform typescript and javascript client SDK for Mozart
+Cross platform typescript and javascript client SDK for the Mozart Digital Assets Platform - www.mozart.xyz
 
 # Commands for configuration
 
