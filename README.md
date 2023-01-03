@@ -17,4 +17,4 @@ console.log(manager.userData);
 Builds web version of the SDK and puts it into dist/src/esm - you can use it on web applications as a global variable called MozartManager.  An example is provided in the public folder and you can launch the example by typing npm run dev
 
 # Documentation
-### Class documentation can be found in the docs folder of this repo
+### Class documentation can be found here: https://mozart-xyz.github.io/mz-js/classes/MozartManager.html
