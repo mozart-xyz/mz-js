@@ -1,1 +1,1 @@
-{"version":3,"file":"TransferNft.js","sourceRoot":"","sources":["../../../src/data/TransferNft.ts"],"names":[],"mappings":"AACA,MAAM,OAAO,WAAW;IAAxB;QAEC,oDAAoD;QAC5C,gBAAW,GAAU,EAAE,CAAC;QAEhC,+CAA+C;QACvC,eAAU,GAAU,EAAE,CAAC;QAE/B,mDAAmD;QAC3C,UAAK,GAAU,EAAE,CAAC;IAG3B,CAAC;CAAA"}
+{"version":3,"file":"TransferNft.js","sourceRoot":"","sources":["../../../src/data/TransferNft.ts"],"names":[],"mappings":";;;AACA,MAAa,WAAW;IAAxB;QAEC,oDAAoD;QAC5C,gBAAW,GAAU,EAAE,CAAC;QAEhC,+CAA+C;QACvC,eAAU,GAAU,EAAE,CAAC;QAE/B,mDAAmD;QAC3C,UAAK,GAAU,EAAE,CAAC;IAG3B,CAAC;CAAA;AAZD,kCAYC"}

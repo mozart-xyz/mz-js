@@ -1,4 +1,7 @@
-export class NftTemplate {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NftTemplate = void 0;
+class NftTemplate {
     constructor() {
         /*[string] NO DESCRIPTION, PLEASE ADD TO API.YAML*/
         this.nftTemplateId = '';
@@ -14,4 +17,5 @@ export class NftTemplate {
         this.collectionId = '';
     }
 }
+exports.NftTemplate = NftTemplate;
 //# sourceMappingURL=NftTemplate.js.map

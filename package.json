@@ -1,6 +1,6 @@
 {
-    "name": "mozart-js",
-    "version": "1.0.0",
+    "name": "@mozartxyz/mozartjs",
+    "version": "1.0.2",
     "description": "Mozart SDK for javascript, from mozart.xyz",
     "main": "./dist/umd/index.js",
     "module": "./dist/esm/index.js",

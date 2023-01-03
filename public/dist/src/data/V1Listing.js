@@ -1,4 +1,7 @@
-export class V1Listing {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1Listing = void 0;
+class V1Listing {
     constructor() {
         /*[string] The id of the Listing.*/
         this.id = '';
@@ -12,4 +15,5 @@ export class V1Listing {
         this.sellerId = '';
     }
 }
+exports.V1Listing = V1Listing;
 //# sourceMappingURL=V1Listing.js.map

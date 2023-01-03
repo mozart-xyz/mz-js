@@ -1,4 +1,7 @@
-export class Collection {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Collection = void 0;
+class Collection {
     constructor() {
         /*[string] The id of the Collection*/
         this.id = '';
@@ -18,4 +21,5 @@ export class Collection {
         this.gameIds = [];
     }
 }
+exports.Collection = Collection;
 //# sourceMappingURL=Collection.js.map

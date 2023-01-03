@@ -1,7 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NFTItem = void 0;
 /**
  * NFTItem is a data class that represents an NFT item
  */
-export class NFTItem {
+class NFTItem {
     constructor() {
         /** The name of the NFT*/
         this.name = "";
@@ -17,4 +20,5 @@ export class NFTItem {
         this.itemTemplateId = "";
     }
 }
+exports.NFTItem = NFTItem;
 //# sourceMappingURL=NFTItem.js.map

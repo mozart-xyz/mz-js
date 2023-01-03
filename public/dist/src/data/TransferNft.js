@@ -1,4 +1,7 @@
-export class TransferNft {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TransferNft = void 0;
+class TransferNft {
     constructor() {
         /*[string] The id of the previous owner of the NFT*/
         this.prevOwnerId = '';
@@ -8,4 +11,5 @@ export class TransferNft {
         this.nftId = '';
     }
 }
+exports.TransferNft = TransferNft;
 //# sourceMappingURL=TransferNft.js.map
